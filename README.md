@@ -1,4 +1,6 @@
 # membership_wpplugin_version
+
+![alt text](http://manna-network.com/images3.jpeg "Logo Title Text 1")
 The Wordpress Plugin version of the membership participation level
 
 
