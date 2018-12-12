@@ -37,8 +37,8 @@
 <tr><td colspan="2" width="100%"><h2>3) Affiliate Program...</h2>
 <div  class="grid_12"  style="background-color:lightgrey; width:97%; height:80px; border: 2px solid; border-radius: 25px; padding:10px 10px 10px;  margin-left: auto ;
   margin-right: auto ;">
-<p class="smallerFont" >Even if you don't operate a website or don't believe it generates enough traffic, the Network offers an affiliate system that offers opportunities to earn Bitcoin Cash selling the network's web traffic!</p>
-</div>
+<p class="smallerFont" >Even if you don't operate a website the Network offers an affiliate system that provides opportunities to earn Bitcoin Cash selling the network's web traffic!</p>
+	</div>
 </td></tr>
 
 </div>     
