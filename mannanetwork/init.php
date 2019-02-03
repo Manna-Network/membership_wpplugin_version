@@ -121,7 +121,7 @@ echo '<br>',plugin_basename('mannanetwork-include.php');
 echo '<br>';
 
 //temp for development
-$affiliate_num = 104;
+//$affiliate_num = 104;
 
 if ($affiliate_num == "change_me" OR $affiliate_num==""){
 $url = $_SERVER['SERVER_NAME'];
