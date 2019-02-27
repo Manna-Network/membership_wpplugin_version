@@ -10,7 +10,7 @@ $cat_page_num = "";
 $category_id = ""; 
 $lnk_num = "";
 
-include('agent_config.php');
+include('member_config.php');
 $args = array();
 if(isset($_GET['regional_num'])){$args['regional_num']=  $_GET['regional_num'];}
 if(isset($link_record_num)){$args['link_record_num']=  $link_record_num;}
@@ -21,9 +21,10 @@ if(isset($link_page_num)){$args['link_page_num']=  $link_page_num;}
 if(isset($cat_page_num)){$args['cat_page_num']=  $cat_page_num;} 
 if(isset($_GET['q'])){$args['category_id']=  $_GET['q']; }
 if(isset($lnk_num)){$args['lnk_num']=  $lnk_num;}
+$args['http_host']=   $_SERVER['HTTP_HOST'];
 
 $handle = curl_init();
-$url = "http://".$agent_url."/mannanetwork-dir/get_category_json.php";
+$url = "http://".$agent_url."/".$agent_folder."/get_category_json.php";
 // Set the url
 curl_setopt($handle, CURLOPT_URL, $url);
 curl_setopt($handle, CURLOPT_POSTFIELDS,$args);
@@ -39,7 +40,7 @@ require_once('translations/en.php');
 
 $comboList = json_decode($jsonlinkList, true);
 
-$menu_str = '<form action=""><select name="subCat1" onchange="updatecategoryButton(this.value), showSubCat2(this.value)">
+$menu_str = '<form action="'. htmlspecialchars($_SERVER["PHP_SELF"], ENT_QUOTES, "utf-8").'"><select name="subCat1" onchange="updatecategoryButton(this.value), showSubCat2(this.value)">
 <option value="">'.WORDING_AJAX_MENU1.'</option> ';
 foreach($comboList as $key=>$value){
  if($comboList[$key]['lft']+1 < $comboList[$key]['rgt']){

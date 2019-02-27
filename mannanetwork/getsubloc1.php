@@ -10,7 +10,7 @@ $cat_page_num = "";
 $category_id = ""; 
 $lnk_num = "";
 
-include('agent_config.php');
+include('member_config.php');
 $args = array();
 
 if(isset($_GET['regional_num'])){$args['regional_num']=  $_GET['regional_num'];}
@@ -25,7 +25,7 @@ if(isset($lnk_num)){$args['lnk_num']=  $lnk_num;}
 $args['http_host']=   $_SERVER['HTTP_HOST'];
 
 $handle = curl_init();
-$url = "http://".$agent_url."/mannanetwork-dir/get_regions_json.php";
+$url = "http://".$agent_url."/".$agent_folder."/get_regions_json.php";
 // Set the url
 curl_setopt($handle, CURLOPT_URL, $url);
 curl_setopt($handle, CURLOPT_POSTFIELDS,$args);

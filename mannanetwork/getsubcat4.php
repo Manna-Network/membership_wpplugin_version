@@ -10,7 +10,7 @@ $cat_page_num = "";
 $category_id = ""; 
 $lnk_num = "";
 
-include('agent_config.php');
+include('member_config.php');
 $args = array();
 if(isset($locus_array)){$args['locus_array']=  $locus_array;}
 if(isset($link_record_num)){$args['link_record_num']=  $link_record_num;}
@@ -28,7 +28,7 @@ $args['http_host']=   $_SERVER['HTTP_HOST'];
 
 
 $handle = curl_init();
-$url = "http://".$agent_url."/mannanetwork-dir/get_category_json.php";
+$url = "http://".$agent_url."/".$agent_folder."/get_category_json.php";
 
 // Set the url
 curl_setopt($handle, CURLOPT_URL, $url);

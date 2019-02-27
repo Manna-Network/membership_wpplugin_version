@@ -1,4 +1,32 @@
 <?php
+if(get_option('mn_member_num') AND get_option('mn_member_num')!="changeme"){
+$mn_member_num = get_option('mn_member_num');
+}
+else
+{
+$mn_member_num = "change_me";
+}
+if(get_option('mn_agent_ID') AND get_option('mn_agent_ID')!="changeme"){
+$mn_agent_ID = get_option('mn_agent_ID');
+}
+else
+{
+$mn_agent_ID = "change_me";
+}
+if(get_option('mn_agent_url') AND get_option('mn_agent_url')!="changeme"){
+$mn_agent_url = get_option('mn_agent_url');
+}
+else
+{
+$mn_agent_url = "change_me";
+}
+if(get_option('mn_agent_folder') AND get_option('mn_agent_folder')!="changeme"){
+$mn_agent_folder = get_option('mn_agent_folder');
+}
+else
+{
+$mn_agent_folder = "change_me";
+}
 
 $locus_array = "";
 $link_record_num = "";
@@ -10,7 +38,7 @@ $cat_page_num = "";
 $category_id = ""; 
 $lnk_num = "";
 
-include('agent_config.php');
+//include('member_config.php');
 $args = array();
 if(isset($locus_array)){$args['locus_array']=  $locus_array;}
 if(isset($link_record_num)){$args['link_record_num']=  $link_record_num;}
@@ -28,8 +56,9 @@ $args['http_host']=   $_SERVER['HTTP_HOST'];
 
 
 $handle = curl_init();
-$url = "http://".$agent_url."/mannanetwork-dir/get_category_json.php";
-
+$url = "http://".$mn_agent_url."/".$mn_agent_folder."/get_category_json.php";
+print_r($args);
+echo $url;
 // Set the url
 curl_setopt($handle, CURLOPT_URL, $url);
 curl_setopt($handle, CURLOPT_POSTFIELDS,$args);
